@@ -117,4 +117,24 @@ class ActivitiesController extends Controller
             ], 404);
     	}
     }
+
+    public function getActivityById($activity_id)
+    {
+    	$activity = Activity::with('items')->find($activity_id);
+
+    	if ($activity) {
+    		return response()->json([
+                'data' => [
+                    'type' => 'activities',
+                    'message' => 'Success',
+                    'attributes' => $activity
+                ]
+            ], 200);
+    	} else {
+    		return response()->json([
+                'type' => 'activities',
+                'message' => 'Not Found'
+            ], 404);
+    	}
+    }
 }

@@ -22,7 +22,7 @@ Route::prefix('/v1')->group(function () {
     Route::post('activities/{activity_id}/items', 'ActivitiesController@storeLists');
     
     Route::get('activities', 'ActivitiesController@show');
-    Route::get('activities', 'ActivitiesController@show');
+    Route::get('activities/{activity_id}', 'ActivitiesController@getActivityById');
     
     Route::patch('activities/{activity_id}', 'ActivitiesController@activityUpdate');
     Route::patch('activities/{activity_id}/items/{item_id}', 'ActivitiesController@itemUpdate');

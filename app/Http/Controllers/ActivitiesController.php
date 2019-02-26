@@ -70,4 +70,28 @@ class ActivitiesController extends Controller
     		'data' => $activities
     	], 200);
     }
+
+    public function activityUpdate(Request $request, $activity_id)
+    {
+    	$activity = Activity::find($activity_id);
+
+    	if ($activity) {
+    		$activity->activity_name = $request->input('activity_name');
+    		$activity->save();
+
+    		return response()->json([
+                'data' => [
+                    'type' => 'activities',
+                    'message' => 'Update Success',
+                    'id' => $activity->id,
+                    'attributes' => $activity
+                ]
+            ], 201);
+    	} else {
+    		return response()->json([
+                'type' => 'activities',
+                'message' => 'Not Found'
+            ], 404);
+    	}
+    }
 }

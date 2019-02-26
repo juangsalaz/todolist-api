@@ -94,4 +94,27 @@ class ActivitiesController extends Controller
             ], 404);
     	}
     }
+
+    public function itemUpdate(Request $request, $activity_id, $item_id)
+    {
+    	$item = Item::where('activity_id', $activity_id)->where('id', $item_id)->first();
+
+    	if ($item) {
+    		$item->item_name = $request->input('item_name');
+    		$item->status = $request->input('status');
+    		$item->save();
+
+    		return response()->json([
+                'data' => [
+                    'type' => 'items',
+                    'message' => 'Update Success'
+                ]
+            ], 201);
+    	} else {
+    		return response()->json([
+                'type' => 'items',
+                'message' => 'Not Found'
+            ], 404);
+    	}
+    }
 }

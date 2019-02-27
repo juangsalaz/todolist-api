@@ -26,4 +26,7 @@ Route::prefix('/v1')->group(function () {
     
     Route::patch('activities/{activity_id}', 'ActivitiesController@activityUpdate');
     Route::patch('activities/{activity_id}/items/{item_id}', 'ActivitiesController@itemUpdate');
+
+    Route::delete('activities/{activity_id}', 'ActivitiesController@activityDestroy');
+    Route::delete('activities/{activity_id}/items/{item_id}', 'ActivitiesController@activityItemDestroy');
 });

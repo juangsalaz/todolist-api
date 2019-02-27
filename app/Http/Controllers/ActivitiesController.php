@@ -137,4 +137,36 @@ class ActivitiesController extends Controller
             ], 404);
     	}
     }
+
+    public function activityDestroy($activity_id)
+    {
+        $activity = Activity::find($activity_id);
+
+        if ($activity) {
+            $activity->delete();
+
+            return response()->json([], 204);
+        } else {
+            return response()->json([
+                'type' => 'activities',
+                'message' => 'Not Found'
+            ], 404);
+        }
+    }
+
+    public function activityItemDestroy($activity_id, $item_id)
+    {
+        $item = Item::where('activity_id', $activity_id)->where('id', $item_id)->first();
+
+        if ($item) {
+            $item->delete();
+
+            return response()->json([], 204);
+        } else {
+            return response()->json([
+                'type' => 'items',
+                'message' => 'Not Found'
+            ], 404);
+        }
+    }
 }

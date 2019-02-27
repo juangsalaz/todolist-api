@@ -2,7 +2,7 @@
 
 ## Todo List API create using Laravel framework
 
-I created an todo list app with Laravel as the backend, and this is the API as the backend. This project still on progress, always update this project. Thanks
+I created an todo list app with Laravel, and this is the API as the backend. This project still on progress, always update this project. Thanks
 
 ## How to install this service
 

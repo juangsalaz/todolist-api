@@ -20,5 +20,5 @@ class Item extends Model
      *
      * @var array
      */
-    protected $hidden = ['id', 'activity_id'];
+    protected $hidden = [];
 }

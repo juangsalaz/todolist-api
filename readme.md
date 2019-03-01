@@ -24,3 +24,7 @@ I created an todo list app with Laravel, and this is the API as the backend. Thi
 **PATCH** `api/v1/activities/{activity_id}` (Update an activity)
 
 **PATCH** `api/v1/activities/{activity_id}/items/{item_id}` (Update an item from an activity)
+
+**DELETE** `api/v1/activities/{activity_id}` (Delete an activity)
+
+**DELETE** `api/v1/activities/{activity_id}/items/{item_id}` (Delete an item from an activity)

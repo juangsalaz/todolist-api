@@ -7,8 +7,9 @@ I created an todo list app with Laravel, and this is the API as the backend. Thi
 ## How to install this service
 
 1. Clone this repository in your local
-2. Enter into project directory and run `php artisan migrate` in your console
-3. Run `php artisan serve` to running the server
+2. Enter into project directory and run `composer install` in your console
+3. Run `php artisan migrate` to running the migration database
+4. Then run `php artisan serve` to running the local server
 
 
 ## API Endpoint

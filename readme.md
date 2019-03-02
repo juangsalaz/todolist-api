@@ -28,3 +28,6 @@ I created todo list app with Laravel, and this is the API as the backend. This p
 **DELETE** `api/v1/activities/{activity_id}` (Delete an activity)
 
 **DELETE** `api/v1/activities/{activity_id}/items/{item_id}` (Delete an item from an activity)
+
+I have deployed this API service into Heroku, you can access this endpoint
+`https://lit-atoll-41704.herokuapp.com/api/v1/activities`
